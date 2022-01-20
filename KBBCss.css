@@ -1,0 +1,98 @@
+.ui-grid {
+    grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    
+}
+
+.column {
+    border: 3px solid;
+    height: 1000px;
+}
+
+    .column > h1 {
+        text-align: center;
+        border-bottom: 1px solid;  
+    }
+
+    .column > div {
+        height: 300px;
+        margin-left: 5px;
+    }
+    /*Card css*/
+
+    .card{
+        height:auto;
+        border: 1px dotted;
+        margin: 10px;
+
+       
+    }
+
+        .card .header {
+            display: grid;
+            grid-template-areas: "avatar headerRight threeDots"
+                                 "avatar headerRight threeDots"
+                                 "activityTitle activityTitle activityTitle";
+        }
+
+        .header .avatar {
+            width: 50px;
+            height: 50px;
+            grid-area: avatar;
+            margin-top: 0.25rem;
+            margin-left: 0.25rem;
+            
+
+        }
+        .header .user__name {
+            font-size: 15px;
+            margin-top: 15px;
+            margin-bottom: 0;
+            padding:0;
+            
+        }
+        .header .settingsDropDown {
+            grid-area: threeDots;
+        }
+        .header .rightHeader {
+            grid-area: headerRight;
+        }
+        .header .dateAdded{
+            margin: 0;
+            padding: 0;
+        }
+        .card .taskWarper{
+            width: 100%;
+            margin-top: 10px;
+            display: inline-flex;
+            border: 1px dotted;
+            padding-bottom: 3px;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .card .activityTitle {
+            padding-top: 15px;
+            grid-area: activityTitle;
+        }
+
+        .card .task_footer {
+            display: grid;
+            grid-template-columns: 35% 65%;
+        }
+
+        /*buttons customization*/
+
+        .showMore{
+            width: 100%;
+        }
+    .read-or-hide {
+        color: rgb(192,192,192);
+        cursor: pointer;
+    }
+
+
+
+.menu {
+    background-color: grey;
+}
