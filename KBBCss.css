@@ -24,8 +24,6 @@
         height:auto;
         border: 1px dotted;
         margin: 10px;
-
-       
     }
 
         .card .header {
@@ -33,6 +31,7 @@
             grid-template-areas: "avatar headerRight threeDots"
                                  "avatar headerRight threeDots"
                                  "activityTitle activityTitle activityTitle";
+            margin: 10px;
         }
 
         .header .avatar {
@@ -54,13 +53,27 @@
         .header .settingsDropDown {
             grid-area: threeDots;
         }
+        .header .settingsDropDownMenu{
+            position: absolute;
+            display: block;
+            z-index:-1;
+            background-color: green;
+            opacity: 1;
+            
+        }
         .header .rightHeader {
             grid-area: headerRight;
+
         }
         .header .dateAdded{
             margin: 0;
             padding: 0;
         }
+
+        .card .content{
+            margin: 10px;
+        }
+
         .card .taskWarper{
             width: 100%;
             margin-top: 10px;

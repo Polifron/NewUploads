@@ -5,58 +5,76 @@ const ReadMore = ({ children }) => {
     const text = children;
     const [isReadMore, setIsReadMore] = useState(true);
     const toggleReadMore = () => {
-        setIsReadMore(s=>!s);
+        setIsReadMore(s => !s);
     };
     return (
         <p className="text">
             {isReadMore ? text.slice(0, 50) : text}
             <span onClick={toggleReadMore} className="read-or-hide">
-                {isReadMore ? "...read more" : " show less"}
+                {isReadMore ? "... read more" : " show less"}
             </span>
         </p>
     );
 };
 
-const ShowMore = ({children}) => {
+const ShowMore = ({ children }) => {
     const [showMore, setShowMore] = useState(true);
     const tasks = children;
     const [unit, setUnit] = useState("Down");
     const toggleShowMore = () => {
         setShowMore(s => !s);
-        showMore ? setUnit("Up") : setUnit("Down")
-
+        showMore ? setUnit("Up") : setUnit("Down");
     }
     return (
-
         <div>
-
-        <p  className="taks">
-            {showMore ? "" : tasks }
-
-        </p>
             <button className="showMore" onClick={toggleShowMore}> {unit}</button>
+            <p className="taks">
+                {showMore ? "" : tasks}
+            </p>
+
         </div>
     );
 };
+
+const SetingsDropDown = ({ children }) => {
+    const [isDropDown, setDropDown] = useState(true);
+    const setingsDrop = children;
+    const toggleSettingDrop = () => {
+        setDropDown(s => !s);
+    }
+    return (
+        <div>
+            <p onClick={toggleSettingDrop} className="settingsDropDown">...</p>
+            <div className="settingsDropDownMenu">{isDropDown ? null : setingsDrop}</div>
+        </div>
+    )
+}
+
+
 
 const logo = require('./Avatar-PNG-Pic.png');
 
 
 const Activity = () => {
-    
+
     return (
-        
+
         <Card>
             <CardHeader>
                 <img className="avatar" src={logo} />
                 <div className="rightHeader">
                     <div className="user__name">
-                    Polifron ionut</div>
+                        Polifron ionut</div>
                     <p className="dateAdded"> At: 10-12-21 </p>
                 </div>
-                <div className="settingsDropDown">
-                    ...
-                </div>
+                <SetingsDropDown className="settingsDropDown">
+              
+                        <p>Help</p>
+                        <p>Post pone</p>
+                        <p>Refuse</p>
+                </SetingsDropDown>
+
+
                 <div className="activityTitle">
                     Do your job motherfuker!
                 </div>
@@ -74,7 +92,6 @@ const Activity = () => {
                         Opportunities. Knowledge is power!
                     </ReadMore>
                 </div>
-
 
                 <div className="task_footer">
                     <p>Tasks <span>3/12</span></p>
@@ -94,12 +111,9 @@ const Activity = () => {
                         <div>Task</div>
                         <input type="checkbox" />
                     </div>
-
-
-
                 </ShowMore>
             </CardContent>
-            
+
         </Card>
     );
 }
